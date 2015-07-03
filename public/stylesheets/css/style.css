@@ -1,0 +1,352 @@
+/**
+ * CONTENTS
+ *
+ *
+ * NORMALIZE
+ * Reset.css........Level the playing field.
+ * Box-sizing...........Better default `box-sizing`.
+ *
+ *
+ * GLOBAL
+ * Global...............Globally-available variables and config.
+ *
+ *
+ * CROSS-BROWSER PREFIXES
+ * Flexbox
+ * Animations
+ *
+ *
+ * OBJECTS
+ * Wrappers and constraining objects
+ *
+ *
+ * MAIN COMPONENTS
+ * Main-head............The main page header.
+ * Main-foot............The main page footer.
+ * Buttons..............Button elements.
+ *
+ * PAGE-SPECIFIC COMPONENTS
+ *
+ * TRUMPS
+ * Text.................Text helpers.
+ */
+/*------------------------------------*\
+#NORMALIZE
+\*------------------------------------*/
+/* `XHTML, HTML4, HTML5 Reset
+----------------------------------------------------------------------------------------------------*/
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+dialog,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+font,
+footer,
+form,
+h1,
+h2,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+main,
+mark,
+menu,
+meter,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+progress,
+q,
+rp,
+rt,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video,
+xmp {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 100%; }
+
+html,
+body {
+  height: 100%; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  /*
+    Override the default (display: inline) for
+    browsers that do not recognize HTML5 tags.
+  
+    IE8 (and lower) requires a shiv:
+    http://ejohn.org/blog/html5-shiv
+  */
+  display: block; }
+
+b,
+strong {
+  /*
+    Makes browsers agree.
+    IE + Opera = font-weight: bold.
+    Gecko + WebKit = font-weight: bolder.
+  */
+  font-weight: bold; }
+
+img {
+  color: transparent;
+  font-size: 0;
+  vertical-align: middle;
+  /*
+    For IE.
+    http://css-tricks.com/ie-fix-bicubic-scaling-for-images
+  */
+  -ms-interpolation-mode: bicubic; }
+
+ol,
+ul {
+  list-style: none; }
+
+li {
+  /*
+    For IE6 + IE7:
+  
+    "display: list-item" keeps bullets from
+    disappearing if hasLayout is triggered.
+  */
+  display: list-item; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+th,
+td,
+caption {
+  font-weight: normal;
+  vertical-align: top;
+  text-align: left; }
+
+q {
+  quotes: none; }
+
+q:before,
+q:after {
+  content: "";
+  content: none; }
+
+sub,
+sup,
+small {
+  font-size: 75%; }
+
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+svg {
+  /*
+    For IE9. Without, occasionally draws shapes
+    outside the boundaries of <svg> rectangle.
+  */
+  overflow: hidden; }
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/*------------------------------------*\
+#GLOBAL
+\*------------------------------------*/
+h1, h2 {
+  font-family: "Open Sans", "Source Sans Pro", sans-serif;
+  color: #999;
+  font-size: 1.7rem;
+  font-weight: 600; }
+
+h2 {
+  font-size: 1.5rem; }
+
+li, a, p {
+  font-family: "Open Sans", "Source Sans Pro", sans-serif;
+  color: #999;
+  font-size: 1rem;
+  font-weight: 500; }
+
+/*------------------------------------*\
+#CROSS-BROWSER PREFIXES
+\*------------------------------------*/
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+/*------------------------------------*\
+#MAIN COMPONENTS
+\*------------------------------------*/
+/* Main header positioning */
+header {
+  text-align: justify;
+  letter-spacing: 1px;
+  height: 8em;
+  padding: 2em 5%; }
+
+header h1, header h2,
+header nav {
+  display: inline-block; }
+
+header::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  float: right; }
+
+nav {
+  float: right;
+  padding: 8px 0; }
+
+nav > * {
+  padding: 0 1rem; }
+
+.menu {
+  display: none; }
+
+/* Main header media queries */
+@media all and (max-width: 53em) {
+  nav a {
+    display: none; }
+
+  .menu {
+    display: block; } }
+/* Main content positioning (Flexbox-based) */
+.col {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  width: 100%;
+  justify-content: center;
+  align-content: center; }
+
+.col > * {
+  text-align: center;
+  padding: 1.5em; }
+
+.row {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: center;
+  align-content: center; }
+
+.row > * {
+  text-align: center;
+  padding: 1.5em;
+  margin: 1em 0 1em 0; }
+
+/*------------------------------------*\
+#PAGE-SPECIFIC COMPONENTS
+\*------------------------------------*/
+/*------------------------------------*\
+#TRUMPS
+\*------------------------------------*/
+.dashed-border {
+  border: dashed 1px #666; }
+
+.solid-border {
+  border: solid 1px #666; }
+
+.invisible {
+  visibility: hidden; }
+
+.hidden {
+  display: none; }
+
+/*# sourceMappingURL=style.css.map */

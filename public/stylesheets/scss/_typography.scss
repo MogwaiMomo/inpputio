@@ -1,0 +1,39 @@
+$base-font-size: 1rem;
+$base-font-weight: 500;
+$base-font-color: #999;
+
+
+
+$body-font-family: "Open Sans", "Source Sans Pro", sans-serif;
+$header-font-family: "Open Sans", "Source Sans Pro", sans-serif;
+
+
+
+@mixin headline-font() {
+	font-family: $header-font-family;
+	color: $base-font-color;
+	font-size: $base-font-size * 1.7;
+	font-weight: $base-font-weight * 1.2;
+}
+
+@mixin body-font() {
+	font-family: $body-font-family;
+	color: $base-font-color;
+	font-size: $base-font-size;
+	font-weight: $base-font-weight;
+}
+
+
+h1 {
+	@include headline-font();
+}
+
+h2 {
+	@extend h1;
+	font-size: $base-font-size * 1.5;
+}
+
+li, a, p {
+	@include body-font();
+}
+

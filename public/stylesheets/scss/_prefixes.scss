@@ -1,0 +1,58 @@
+// mixins for browser compatibility (doesn't account for IE9 and below)
+
+// flexbox pre-fixes:
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-flow($values){
+  -webkit-flex-flow: $values;
+  flex-flow: $values;
+}
+
+@mixin justify-content($val){
+  -webkit-justify-content: $val; 
+  justify-content: $val;
+}
+
+@mixin align-content($val){
+  -webkit-align-content: $val; 
+  align-content: $val;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+}
+
+// CSS animation pre-fixes:
+
+
+@mixin animation($vals) {
+  -webkit-animation: $vals; /* Safari 4+ */
+  -moz-animation:    $vals; /* Fx 5+ */
+  -o-animation:      $vals; /* Opera 12+ */
+  animation:         $vals; /* IE 10+, Fx 29+ */
+}
+
+
+
+
+ 
+
