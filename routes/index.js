@@ -5,7 +5,9 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', {  
   	app_name:'Inpput', 
-  	app_uvp: 'Get Authentic Testimonials Fast', 
+  	app_uvp: 'Get Authentic Testimonials Fast',
+  	login_p: '/login', 
+  	signup_p: '/signup',
   });
 });
 
