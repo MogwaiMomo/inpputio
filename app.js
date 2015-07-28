@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+
 var app = express();
 
 // view engine setup
@@ -25,6 +26,29 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+// get login page:
+
+app.get('/login', function(req, res, next) {
+  res.render('login', {  
+    app_name:'Inpput', 
+    app_uvp: 'Get Authentic Testimonials Fast',
+    login_p: '/login', 
+    signup_p: '/signup',
+  });
+});
+
+// get signup page:
+
+app.get('/signup', function(req, res, next) {
+  res.render('signup', {  
+    app_name:'Inpput', 
+    app_uvp: 'Get Authentic Testimonials Fast',
+    login_p: '/login', 
+    signup_p: '/signup',
+  });
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

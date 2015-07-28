@@ -6,7 +6,7 @@ $ npm install
 
 Run the app (with debugging info): 
 
-$ DEBUG=myapp npm start
+$ DEBUG=inpputio npm start
 
 
 # CODING CHALLENGE: 

@@ -8,4 +8,13 @@ html
     link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,700,300,600,400', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='/stylesheets/css/style.css')
   body
-    block content	
+    header
+      a(href="/") 
+        h1 INPPUT
+        nav
+          a(href=login_p) Login
+          a(href=signup_p) Sign Up
+          a(class="menu", href="#") MENU
+
+
+  block content	
