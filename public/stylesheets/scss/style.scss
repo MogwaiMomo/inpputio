@@ -32,9 +32,8 @@
  */
 
 
-/*------------------------------------*\
-#NORMALIZE
-\*------------------------------------*/
+
+// IMPORT ----------------------------------------------
 
 @import "reset"; 
 
@@ -43,145 +42,88 @@
  }
 
 
-
-
-/*------------------------------------*\
-#GLOBAL
-\*------------------------------------*/
-
 @import "colors";
 @import "typography";
-
-
-
-
-
-/*------------------------------------*\
-#CROSS-BROWSER PREFIXES
-\*------------------------------------*/
-
 @import "prefixes";
 
 
 
 
-
-/*------------------------------------*\
-#OBJECTS
-\*------------------------------------*/
+// TEMPLATE ELEMENTS -------------------------------------
 
 
-
-
-
-
-
-
-/*------------------------------------*\
-#MAIN COMPONENTS
-\*------------------------------------*/
-
-
-/* Main header positioning */ 
-
-header {
-  text-align: justify;
-  letter-spacing: 1px;
-  height: 8em;
-  padding: 2em 5%;
+body {
+  background-color: $background-color;
 }
 
-header h1,
-header nav {
-  display: inline-block;
+body > nav.navbar.navbar-fixed-top {
+  background-color: $accent-color; 
 }
 
-header::after {
-  content:'';
-  display: inline-block;
-  width: 100%;
+#navbar > ul.nav.navbar-nav {
   float: right;
 }
 
-nav {
-  float: right;
-  padding: 8px 0;
-}
-nav > * {
-  padding: 0 1rem;
+@media (min-width: 768px) {
+    .navbar>.container .navbar-brand,.navbar>.container-fluid .navbar-brand {
+      margin:13px 0px 10px 0px;
+    }
 }
 
-.menu {  // mobile menu icon
-  display:none;
+body > nav > div > div.navbar-header > a > img {
+  width: 55%;
+  padding: 0;
 }
 
-/* Main header media queries */ 
+a.primary-button {
+  font-size: 1.2rem;
+  padding: 20px 30px;
+  background-color: $cta-color;
+  color: #fff;
+  border-radius: 5px;
 
-
-@media all and (max-width: 53em) {
-  nav a {
-    display: none;
-  }
-  .menu {  // mobile menu icon
-  display:block;
-}
 }
 
-
-/* Main content positioning (Flexbox-based) */ 
-
-
-.col {
-  @include flexbox(); 
-  @include flex-flow(column nowrap);
-  width: 100%;
-  justify-content: center;
-  align-content: center;
-}
- 
-.col > * {
-  text-align: center;
-  padding: 1.5em;
+#navbar > ul.nav.navbar-nav > li {
+  margin: 10px 15px;
 }
 
-
-.row {
-  @include flexbox(); 
-  @include flex-flow(row wrap);
-  width: 100%;
-  justify-content: center;
-  align-content: center;
+#navbar > ul.nav.navbar-nav > li:last-child {
+  border: 2px solid #fff;
+  border-radius: 5px;
 }
 
-.row > * {
-  text-align: center;
-  padding: 1.5em;
-  margin: 1em 0 1em 0;
+.navbar-toggle {
+  background-color: transparent;
+  background-image: none;
+  border: 2px solid #fff;
+  border-radius: 4px;
 }
 
-
-
-
-
-
-/*------------------------------------*\
-#PAGE-SPECIFIC COMPONENTS
-\*------------------------------------*/
-
-
-
-
-
-/*------------------------------------*\
-#TRUMPS
-\*------------------------------------*/
-
-.dashed-border {
-	border: dashed 1px #666;
+.icon-bar {
+  background-color: #fff;
 }
 
-.solid-border {
-	border: solid 1px #666;
+// PAGE-SPECIFIC ELEMENTS --------------------------------
+
+
+
+
+// MEDIA QUERIES -----------------------------------------
+
+
+
+
+
+// TRUMPS -------------------------------
+
+
+.red-border {
+	border: solid 1px #f00;
+}
+
+.blue-border {
+	border: solid 1px #00f;
 }
 
 .invisible {

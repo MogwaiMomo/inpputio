@@ -30,9 +30,6 @@
  * TRUMPS
  * Text.................Text helpers.
  */
-/*------------------------------------*\
-#NORMALIZE
-\*------------------------------------*/
 /* `XHTML, HTML4, HTML5 Reset
 ----------------------------------------------------------------------------------------------------*/
 a,
@@ -236,112 +233,71 @@ svg {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-/*------------------------------------*\
-#GLOBAL
-\*------------------------------------*/
+li, a, p {
+  font-family: "Avenir", sans-serif;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 500; }
+
+a {
+  text-decoration: none; }
+
 h1, h2 {
-  font-family: "Open Sans", "Source Sans Pro", sans-serif;
-  color: #999;
-  font-size: 1.7rem;
-  font-weight: 600; }
+  font-family: "Avenir", sans-serif;
+  color: #666;
+  font-size: 5.001rem;
+  font-weight: 700; }
 
 h2 {
   font-size: 1.5rem; }
 
-li, a, p {
-  font-family: "Open Sans", "Source Sans Pro", sans-serif;
-  color: #999;
-  font-size: 1rem;
-  font-weight: 500; }
+nav ul a {
+  color: #fff; }
 
-/*------------------------------------*\
-#CROSS-BROWSER PREFIXES
-\*------------------------------------*/
-/*------------------------------------*\
-#OBJECTS
-\*------------------------------------*/
-/*------------------------------------*\
-#MAIN COMPONENTS
-\*------------------------------------*/
-/* Main header positioning */
-header {
-  text-align: justify;
-  letter-spacing: 1px;
-  height: 8em;
-  padding: 2em 5%; }
+body {
+  background-color: #E8FFFA; }
 
-header h1, header h2,
-header nav {
-  display: inline-block; }
+body > nav.navbar.navbar-fixed-top {
+  background-color: #51E3C2; }
 
-header::after {
-  content: '';
-  display: inline-block;
-  width: 100%;
+#navbar > ul.nav.navbar-nav {
   float: right; }
 
-nav {
-  float: right;
-  padding: 8px 0; }
+@media (min-width: 768px) {
+  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin: 13px 0px 10px 0px; } }
+body > nav > div > div.navbar-header > a > img {
+  width: 55%;
+  padding: 0; }
 
-nav > * {
-  padding: 0 1rem; }
+a.primary-button {
+  font-size: 1.2rem;
+  padding: 20px 30px;
+  background-color: #FF0039;
+  color: #fff;
+  border-radius: 5px; }
 
-.menu {
-  display: none; }
+#navbar > ul.nav.navbar-nav > li {
+  margin: 10px 15px; }
 
-/* Main header media queries */
-@media all and (max-width: 53em) {
-  nav a {
-    display: none; }
+#navbar > ul.nav.navbar-nav > li:last-child {
+  border: 2px solid #fff;
+  border-radius: 5px; }
 
-  .menu {
-    display: block; } }
-/* Main content positioning (Flexbox-based) */
-.col {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: column nowrap;
-  flex-flow: column nowrap;
-  width: 100%;
-  justify-content: center;
-  align-content: center; }
+.navbar-toggle {
+  background-color: transparent;
+  background-image: none;
+  border: 2px solid #fff;
+  border-radius: 4px; }
 
-.col > * {
-  text-align: center;
-  padding: 1.5em; }
+.icon-bar {
+  background-color: #fff; }
 
-.row {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  flex-flow: row wrap;
-  width: 100%;
-  justify-content: center;
-  align-content: center; }
+.red-border {
+  border: solid 1px #f00; }
 
-.row > * {
-  text-align: center;
-  padding: 1.5em;
-  margin: 1em 0 1em 0; }
-
-/*------------------------------------*\
-#PAGE-SPECIFIC COMPONENTS
-\*------------------------------------*/
-/*------------------------------------*\
-#TRUMPS
-\*------------------------------------*/
-.dashed-border {
-  border: dashed 1px #666; }
-
-.solid-border {
-  border: solid 1px #666; }
+.blue-border {
+  border: solid 1px #00f; }
 
 .invisible {
   visibility: hidden; }

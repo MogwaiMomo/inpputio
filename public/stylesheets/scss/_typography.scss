@@ -1,26 +1,46 @@
+// Define modular scale-------------------------------------------------------
+
+$scale-ratio: 1.667;
+
+
+
+// Define body font-----------------------------------------------------------
+
 $base-font-size: 1rem;
 $base-font-weight: 500;
-$base-font-color: #999;
+$base-font-color: #666;
+$base-font-family: "Avenir", sans-serif;
+
+@mixin body-font() {
+	font-family: $base-font-family;
+	color: $base-font-color;
+	font-size: $base-font-size;
+	font-weight: $base-font-weight;
+}
+
+li, a, p {
+	@include body-font();
+}
+
+a {
+	text-decoration: none;
+}
 
 
 
-$body-font-family: "Open Sans", "Source Sans Pro", sans-serif;
-$header-font-family: "Open Sans", "Source Sans Pro", sans-serif;
+// Define largest headline font-----------------------------------------------
 
+$header-font-size: $base-font-size * ($scale-ratio * 3);
+$header-font-weight: 700;
+$header-font-color: #666;
+$header-font-family: "Avenir", sans-serif;
 
 
 @mixin headline-font() {
 	font-family: $header-font-family;
-	color: $base-font-color;
-	font-size: $base-font-size * 1.7;
-	font-weight: $base-font-weight * 1.2;
-}
-
-@mixin body-font() {
-	font-family: $body-font-family;
-	color: $base-font-color;
-	font-size: $base-font-size;
-	font-weight: $base-font-weight;
+	color: $header-font-color;
+	font-size: $header-font-size;
+	font-weight: $header-font-weight;
 }
 
 
@@ -33,7 +53,10 @@ h2 {
 	font-size: $base-font-size * 1.5;
 }
 
-li, a, p {
-	@include body-font();
+
+
+nav ul a {	
+	color: #fff;
 }
+
 
