@@ -67,6 +67,7 @@ body > nav.navbar.navbar-fixed-top {
 @media (min-width: 768px) {
     .navbar>.container .navbar-brand,.navbar>.container-fluid .navbar-brand {
       margin:13px 0px 10px 0px;
+      padding-left:0;
     }
 }
 
@@ -91,6 +92,7 @@ a.primary-button {
 #navbar > ul.nav.navbar-nav > li:last-child {
   border: 2px solid #fff;
   border-radius: 5px;
+  margin-right: 0;
 }
 
 .navbar-toggle {
@@ -102,6 +104,17 @@ a.primary-button {
 
 .icon-bar {
   background-color: #fff;
+}
+
+div[role="main"] {
+  margin-top: 100px;
+}
+
+.jumbotron {
+  text-align: center !important;
+  h1, h2 {
+    margin-bottom: 70px;
+  }
 }
 
 // PAGE-SPECIFIC ELEMENTS --------------------------------
