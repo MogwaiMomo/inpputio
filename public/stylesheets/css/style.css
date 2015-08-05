@@ -254,6 +254,10 @@ h2 {
 nav ul a {
   color: #fff; }
 
+.jumbotron h1, .jumbotron h2,
+.jumbotron h2 {
+  margin-bottom: 1.5rem; }
+
 body {
   background-color: #E8FFFA; }
 
@@ -300,8 +304,6 @@ div[role="main"] {
 
 .jumbotron {
   text-align: center !important; }
-  .jumbotron h1, .jumbotron h2, .jumbotron h2 {
-    margin-bottom: 70px; }
 
 .red-border {
   border: solid 1px #f00; }
