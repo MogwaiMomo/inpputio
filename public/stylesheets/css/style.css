@@ -305,6 +305,10 @@ div[role="main"] {
 .jumbotron {
   text-align: center !important; }
 
+.btn {
+  font-size: 20px;
+  padding: 15px 30px; }
+
 .red-border {
   border: solid 1px #f00; }
 
