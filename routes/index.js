@@ -1,4 +1,6 @@
 var express = require('express');
+var passport = require('passport');
+var Account = require('../models/account');
 var router = express.Router();
 
 
@@ -10,21 +12,12 @@ router.get('/', function(req, res, next) {
   	app_uvp: 'Get Authentic Testimonials Fast',
   	login_p: '/login', 
   	signup_p: '/signup',
+    user : req.user,
   });
 });
 
-/* GET login page. */
 
-router.get('/login', function(req, res, next) {
-  res.render('login', {  
-    app_name:'Inpput', 
-    app_uvp: 'Get Authentic Testimonials Fast',
-    login_p: '/login', 
-    signup_p: '/signup',
-  });
-});
-
-/* GET login page. */
+/* GET signup page. */
 
 router.get('/signup', function(req, res, next) {
   res.render('signup', {  
@@ -35,5 +28,47 @@ router.get('/signup', function(req, res, next) {
   });
 });
 
+
+/* POST signup page. */
+
+router.post('/signup', function(req, res) {
+  Account.register(new Account({ username : req.body.username}), req.body.password, function(err, account) {
+      if (err) {
+        return res.render('signup', { account : account });
+      }
+      passport.authenticate('local')(req, res, function () {
+        res.redirect('/');
+      });
+  });
+
+});
+
+/* GET login page. */
+
+router.get('/login', function(req, res, next) {
+  res.render('login', {  
+    login_p: '/login', 
+    signup_p: '/signup',
+    user : req.user,
+  });
+});
+
+/* POST login page. */
+
+router.post('/login', passport.authenticate('local'), function(req, res) {
+  res.redirect('/');
+});
+
+
+/* GET logout page. */
+
+router.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/');
+});
+
+router.get('/ping', function(req, res){
+  res.status(200).send("pong!");
+});
 
 module.exports = router;

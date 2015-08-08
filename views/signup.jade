@@ -4,4 +4,11 @@ block content
 
 	.jumbotron
 		h2 Sign up to Inpput
-		a(href="/signup" class="primary-button") Sign Up (it's FREE)
+		form(role='form', action="/signup", method="post", style='max-width:300px; margin:0 auto;')
+			.form-group
+				input.form-control(type='text', name="username", placeholder="Enter Username")
+			.form-group
+				input.form-control(type='password', name="password", placeholder='Password')
+			button.btn.btn-danger(type='submit') Sign Up (It's FREE)
+			
+		

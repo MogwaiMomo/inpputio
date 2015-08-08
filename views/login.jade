@@ -4,7 +4,16 @@ block content
 
 	.jumbotron
 		h2 Login to Inpput
-		a(href="/login" class="primary-button") Login
+		form(role='form', action="/login", method="post", style='max-width:300px; margin:0 auto;')
+			.form-group
+				input.form-control(type='text', name="username", placeholder="Enter Username")
+			.form-group
+				input.form-control(type='password', name="password", placeholder='Password')
+			button.btn.btn-danger(type='submit') Login Now
+
+		
+		
+
 			
 		
 				
