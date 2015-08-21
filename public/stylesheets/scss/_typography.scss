@@ -8,8 +8,9 @@ $scale-ratio: 1.667;
 
 $base-font-size: 1rem;
 $base-font-weight: 500;
-$base-font-color: #666;
 $base-font-family: "Avenir", sans-serif;
+$base-font-color: #666;
+$link-font-color: #47C5A9;
 
 @mixin body-font() {
 	font-family: $base-font-family;
@@ -23,6 +24,7 @@ li, a, p {
 }
 
 a {
+	color: $link-font-color;
 	text-decoration: none;
 }
 

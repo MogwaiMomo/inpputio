@@ -34,10 +34,13 @@ router.get('/signup', function(req, res, next) {
 router.post('/signup', function(req, res) {
   Account.register(new Account({ username : req.body.username}), req.body.password, function(err, account) {
       if (err) {
-        return res.render('signup', { account : account });
+        return res.render('signup', { 
+          info: "Sorry. That username already exists. Try again." });
       }
+
       passport.authenticate('local')(req, res, function () {
-        res.redirect('/');
+        var url = req.body.username
+        res.redirect('/users/' + url);
       });
   });
 
@@ -56,7 +59,11 @@ router.get('/login', function(req, res, next) {
 /* POST login page. */
 
 router.post('/login', passport.authenticate('local'), function(req, res) {
-  res.redirect('/');
+  // DOESN'T WORK. NEEDS TO FIX: if (res.err) {
+  //   return res.render('login', {info: "The username and/or password you typed is incorrect. Please try again."});
+  // }
+  var url = req.body.username
+  res.redirect('/users/' + url);
 });
 
 

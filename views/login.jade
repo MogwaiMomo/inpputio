@@ -3,6 +3,9 @@ extends layout
 block content
 
 	.jumbotron
+		if (info)
+			h4= info
+			br
 		h2 Login to Inpput
 		form(role='form', action="/login", method="post", style='max-width:300px; margin:0 auto;')
 			.form-group

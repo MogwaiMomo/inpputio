@@ -25,11 +25,17 @@ html
           |         
           #navbar.navbar-collapse.collapse
             ul.nav.navbar-nav
-              li.active
-                a(href='login') Login
-              |             
-              li
-                a(href='/signup') Signup
+              if (!user)
+                li.active
+                  a(href='/login') Login
+                |             
+                li
+                  a(href='/signup') Signup
+
+              if (user)
+                li.active
+                  a(href='/logout') Log out
+              
     .container(role="main")
       block content
   script(src="//code.jquery.com/jquery-1.11.3.min.js")

@@ -34,10 +34,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/login', routes);
-app.use('/signup', routes);
-app.use('/users', users);
+app.use(routes);
+app.use(users);
 
 // passport config
 
@@ -47,12 +45,14 @@ passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
 // mongoose
+
 mongoose.connect('mongodb://localhost/passport_local_mongoose_express4');
 
 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
+  //console.log(req);
   var err = new Error('Not Found');
   err.status = 404;
   next(err);

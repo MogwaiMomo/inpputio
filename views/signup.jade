@@ -3,6 +3,9 @@ extends layout
 block content
 
 	.jumbotron
+		if (info)
+			h4= info
+			br
 		h2 Sign up to Inpput
 		form(role='form', action="/signup", method="post", style='max-width:300px; margin:0 auto;')
 			.form-group
@@ -10,5 +13,6 @@ block content
 			.form-group
 				input.form-control(type='password', name="password", placeholder='Password')
 			button.btn.btn-danger(type='submit') Sign Up (It's FREE)
+
 			
 		
