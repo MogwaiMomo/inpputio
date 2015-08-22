@@ -56,12 +56,12 @@ router.get('/login', function(req, res, next) {
   });
 });
 
-/* POST login page. */
+/* POST login page - WORKS, BUT NOT IDEAL */
 
-router.post('/login', passport.authenticate('local', {  
-  failureRedirect: '/login'}), function(req, res) {
-  res.redirect('/users/' + req.user.username);
-});
+// router.post('/login', passport.authenticate('local', {  
+//   failureRedirect: '/login'}), function(req, res) {
+//   res.redirect('/users/' + req.user.username);
+// });
 
 
 /* GET logout page. */
