@@ -56,12 +56,42 @@ router.get('/login', function(req, res, next) {
   });
 });
 
-/* POST login page - WORKS, BUT NOT IDEAL */
 
-// router.post('/login', passport.authenticate('local', {  
-//   failureRedirect: '/login'}), function(req, res) {
+
+/* POST login page - WORKS, BUT NO REDIRECT OR ERROR MESSAGE */
+
+// router.post('/login', passport.authenticate('local'), function(req, res) {
 //   res.redirect('/users/' + req.user.username);
 // });
+
+/* POST login page - WORKS AND REDIRECTS, BUT NO ERROR MESSAGE */
+
+// router.post('/login',
+//  // handler 1: 
+//   passport.authenticate('local'), 
+//   // Handler 2 (callback): 
+//   function(req, res) {
+//     res.redirect('/users/' + req.user.username);
+// });
+
+
+// res.render('login', {info: req.authInfo});
+
+/* POST login page - ADD ERROR HANDLING */
+
+
+router.post('/login', function(req, res, next) {
+  passport.authenticate('local', function(err, user, info) {
+    if (err) { return next(err); }
+    if (!user) { return res.render('login', {info: "Sorry, wrong username and/or password."}); }
+    
+    req.login(user, function(err) {
+      if (err) { return next(err); }
+      return res.redirect('/users/' + user.username);
+    });
+
+  })(req, res, next); 
+});
 
 
 /* GET logout page. */

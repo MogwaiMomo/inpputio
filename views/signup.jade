@@ -3,10 +3,10 @@ extends layout
 block content
 
 	.jumbotron
+		h2 Sign up to Inpput
 		if (info)
 			h4= info
 			br
-		h2 Sign up to Inpput
 		form(role='form', action="/signup", method="post", style='max-width:300px; margin:0 auto;')
 			.form-group
 				input.form-control(type='text', name="username", placeholder="Enter Username")
