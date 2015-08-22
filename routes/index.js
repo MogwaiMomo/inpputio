@@ -58,12 +58,9 @@ router.get('/login', function(req, res, next) {
 
 /* POST login page. */
 
-router.post('/login', passport.authenticate('local'), function(req, res) {
-  // DOESN'T WORK. NEEDS TO FIX: if (res.err) {
-  //   return res.render('login', {info: "The username and/or password you typed is incorrect. Please try again."});
-  // }
-  var url = req.body.username
-  res.redirect('/users/' + url);
+router.post('/login', passport.authenticate('local', {  
+  failureRedirect: '/login'}), function(req, res) {
+  res.redirect('/users/' + req.user.username);
 });
 
 
