@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
   res.render('index', {  
   	app_name:'Inpput', 
   	app_uvp: 'Get Authentic Testimonials Fast',
+    title: 'Inpput: Get Authentic Testimonials Fast',
   	login_p: '/login', 
   	signup_p: '/signup',
     user : req.user,
@@ -23,6 +24,7 @@ router.get('/signup', function(req, res, next) {
   res.render('signup', {  
     app_name:'Inpput', 
     app_uvp: 'Get Authentic Testimonials Fast',
+    title: 'Inpput: Sign Up Free',
     login_p: '/login', 
     signup_p: '/signup',
   });
@@ -50,6 +52,7 @@ router.post('/signup', function(req, res) {
 
 router.get('/login', function(req, res, next) {
   res.render('login', {  
+    title: 'Inpput: Login to Your Account',
     login_p: '/login', 
     signup_p: '/signup',
     user : req.user,
@@ -77,7 +80,7 @@ router.get('/login', function(req, res, next) {
 
 // res.render('login', {info: req.authInfo});
 
-/* POST login page - ADD ERROR HANDLING */
+/* POST login page */
 
 
 router.post('/login', function(req, res, next) {

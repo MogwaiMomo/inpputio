@@ -2,10 +2,16 @@ extends layout
 
 block content
 
-	.jumbotron
+	.jumbotron.dashboard
 
-		h3 Welcome to Inpput!
-		p You are currently logged in as #{user.username}.
+		h3 Hi 
+			span.username #{user.username},
+		p 
+			| You have not launched any feedback-collection campaigns yet. 
+			| To get started, please upload a mailing list. 
 		
 			
-		
+		form(action="/file-upload" class="dropzone" id="my-awesome-dropzone").drag-area
+			div(data-dz-message).dz-message
+				span 
+					p Drag your first file here

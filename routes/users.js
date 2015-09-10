@@ -8,10 +8,9 @@ var router = express.Router();
 
 router.get('/users/:user_id', function(req, res, next){
 	var user_id = req.params.user_id;
-	console.log("WORKING")
-
 	res.render('account', {
-		user : req.user
+		title: "Inpput Dashboard",
+		user : req.user,
 	});
 });	
 

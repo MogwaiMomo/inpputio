@@ -9,16 +9,15 @@ Run the app (with debugging info):
 $ DEBUG=inpputio npm start
 
 
-# CODING CHALLENGE: 
+# FEATURE SCOPE: 
 
-1. DONE - Create login & signup pages, linked from the main nav
-2. DONE - Create a dashboard page, generate upon login
-3. DONE - Create a dashboard URL using a username: 
-   https://www.safaribooksonline.com/blog/2014/03/13/parameterized-routes-express-js/
-4. DONE - Unit Tests onward - User Auth with Passport tutorial: follow along: 
-http://mherman.org/blog/2015/01/31/local-authentication-with-passport-and-express-4/#.VZgO4e1Viko
+Step 1: Import/upload a list of emails:
+https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
+http://www.htmlgoodies.com/html5/javascript/drag-files-into-the-browser-from-the-desktop-HTML5.html#fbid=9wbHg9B5UyH
 
-6. Start creating UI dashboards mockups and planning CRUD functionality & model!
+
+
+
 
 
 

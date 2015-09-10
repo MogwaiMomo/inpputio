@@ -3,11 +3,14 @@ extends layout
 block content
 	.jumbotron
 		if (!user)
-			h1= app_uvp	
+			h1= app_uvp
+			h2.subhead Inpputio collects rich, testimonial-worthy feedback from your most enthusiastic users. Because your happiest customer ... is your best copywriter.   	
 			a(href="signup")
 				button.btn.btn-danger(type='button') Sign Up (It's FREE)
 		if (user)
 			h3 Welcome to Inpput!
 			p You are currently logged in as #{user.username}.
+			a(href="/users/#{user.username}")
+				button.btn.btn-info(type='button') Go to your dashboard
 			
 		
