@@ -11,13 +11,7 @@ $ DEBUG=inpputio npm start
 
 # FEATURE SCOPE: 
 
-Step 1: Import/upload a list of emails:
-http://markdawson.tumblr.com/post/18359176420/asynchronous-file-uploading-using-express-and
-scroll to paragraph that starts with: 
-
-app.post('/api/photos', function(req, res) {
-
-... and work on routes/users.js
+- Store upload in MongoDB
 
 
 
