@@ -12,10 +12,12 @@ $ DEBUG=inpputio npm start
 # FEATURE SCOPE: 
 
 Step 1: Import/upload a list of emails:
-https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications
-http://www.htmlgoodies.com/html5/javascript/drag-files-into-the-browser-from-the-desktop-HTML5.html#fbid=9wbHg9B5UyH
+http://markdawson.tumblr.com/post/18359176420/asynchronous-file-uploading-using-express-and
+scroll to paragraph that starts with: 
 
+app.post('/api/photos', function(req, res) {
 
+... and work on routes/users.js
 
 
 

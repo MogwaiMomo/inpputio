@@ -11,7 +11,9 @@ block content
 			| To get started, please upload a mailing list. 
 		
 			
-		form(action="/file-upload" class="dropzone" id="my-awesome-dropzone").drag-area
+		form(action="/users/#{user.username}/file-upload" class="dropzone" id="mail-drop-area" method="post").drag-area
 			div(data-dz-message).dz-message
-				span 
-					p Drag your first file here
+				span
+					p
+						i(class="fa fa-cloud-upload drag-icon") 
+					p Drag your first file here, or click to browse your computer
