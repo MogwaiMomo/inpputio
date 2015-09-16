@@ -11,7 +11,7 @@ $ DEBUG=inpputio npm start
 
 # FEATURE SCOPE: 
 
-- Store upload in MongoDB
+
 
 
 
