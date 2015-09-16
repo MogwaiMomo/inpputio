@@ -9,11 +9,13 @@ Run the app (with debugging info):
 $ DEBUG=inpputio npm start
 
 
-# FEATURE SCOPE: 
+# TO DO: 
 
+- DONE: Remove file from emails collection
+- DONE: Save path to file in emails collection
 
-
-
+- Create user-specific uploads folder
+- Fix image preview for Dropzone.js
 
 
 

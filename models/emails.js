@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Emails = new Schema({
-	file: { data: Buffer, 
-			contentType: String }
+	path: String, 
+	contentType: String 
 });
 
 
