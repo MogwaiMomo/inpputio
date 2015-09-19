@@ -15,6 +15,7 @@ $ DEBUG=inpputio npm start
 - DONE: Save path to file in emails collection
 
 - Create user-specific uploads folder
+- Write unit test for task above
 - Fix image preview for Dropzone.js
 
 
