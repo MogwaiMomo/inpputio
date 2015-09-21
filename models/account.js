@@ -9,8 +9,11 @@ var Account = new Schema({
 		path: {
 			type: String, 
 			default: '/uploads/'
-		},	
-		contentType: String 
+		},
+		emailFiles: {
+			type: Object,
+			default: {}
+		}			
 	}
 });
 

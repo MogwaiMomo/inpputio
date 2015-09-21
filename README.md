@@ -11,10 +11,8 @@ $ DEBUG=inpputio npm start
 
 # TO DO: 
 
-- DONE: Remove file from emails collection
-- DONE: Save path to file in emails collection
+- Create user-specific uploads folder: Look up multer's ChangeDest method
 
-- Create user-specific uploads folder
 - Write unit test for task above
 - Fix image preview for Dropzone.js
 
