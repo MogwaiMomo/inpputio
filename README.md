@@ -10,11 +10,9 @@ $ DEBUG=inpputio npm start
 
 
 # TO DO: 
-
-- Create user-specific uploads folder: Look up multer's ChangeDest method
-
-- Write unit test for task above
+- Delete files in uploads folder after it's copied to user folder
 - Fix image preview for Dropzone.js
+- Accept tabular data only & make file clickable/viewable in UI
 
 
 
