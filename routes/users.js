@@ -25,7 +25,6 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
     var source = req.file.path;
     var desti_dir = req.params.user_id + "/uploads/";
     var desti = req.params.user_id + "/" + req.file.path;
-    var uploads_dir_exists = false;
 
     mkdirp(desti_dir, function(err) {
       if (err) {
@@ -33,16 +32,23 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
 
       } 
       else {
-        console.log("It worked! Desti_dir is: " + desti_dir);
         try {
           var stream_source = fs.createReadStream(source);
           var stream_desti = fs.createWriteStream(desti);
           
           stream_source.on('data', function(chunk) {
             stream_desti.write(chunk);
-            console.log("IT WORKED. HOLY SHIT");
           });
-          
+
+          // Delete files in /uploads folder after it's copied to user folder
+          try {
+            fs.unlinkSync(source);
+          }
+
+          catch(err) {
+            console.log("ERROR! Unable to delete file");
+          }
+
         }
         catch(err) {
           console.log("ERROR! " + err);
