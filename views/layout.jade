@@ -46,3 +46,6 @@ html
   script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
   script(src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone-amd-module.js")
   script(src="/javascripts/dropzone.js")
+  script.
+    //prevent Dropzone duplicate attachment:
+    Dropzone.autoDiscover = false;

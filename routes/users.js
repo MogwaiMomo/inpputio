@@ -61,7 +61,7 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
             email_list.save(function (err, email_list) {
               if (err) return console.error(err);
               else { 
-                console.log("Upload document successfully saved to MongoDB.")
+                res.send("Upload document successfully saved to MongoDB.")
               }
           }); 
 
