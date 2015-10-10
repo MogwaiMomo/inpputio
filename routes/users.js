@@ -4,7 +4,7 @@ var fs = require('fs');
 var mkdirp = require('mkdirp');
 var router = express.Router();
 var Account = require('../models/account');
-var EmailFile = require('../models/emailFile');
+var Upload = require('../models/upload');
 
 /* GET users listing. */
 
@@ -43,6 +43,28 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
           // Delete files in /uploads folder after it's copied to user folder
           try {
             fs.unlinkSync(source);
+            // save file path and metadata to account.js model
+
+            console.log("File path to save is: " + desti)
+            
+            // create a new uploads object (into which we'll save the file path and info);
+            
+            var email_list = new Upload({
+              username: user_id,
+              file_path: desti,
+              info_type: "email_list",
+              content_type: "plain/text"
+            });
+            
+            // save this to the Uploads collection
+
+            email_list.save(function (err, email_list) {
+              if (err) return console.error(err);
+              else { 
+                console.log("Upload document successfully saved to MongoDB.")
+              }
+          }); 
+
           }
 
           catch(err) {

@@ -9,11 +9,8 @@ Run the app (with debugging info):
 $ DEBUG=inpputio npm start
 
 
-# TO DO: 
-- Delete files in uploads folder after it's copied to user folder
-- 
+# TO DO:
 - Fix image preview for Dropzone.js: "Server responded with 0 code"
-- Save file path in mongo account model
 - Accept tabular data only & make file clickable/viewable in UI
 - Design & develop post-upload UI
 
