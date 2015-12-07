@@ -10,12 +10,14 @@ $ DEBUG=inpputio npm start
 
 
 # TO DO:
-- Fix image preview for Dropzone.js: "Server responded with 0 code":
-    + Add HTTP response to file upload POST
+- Render new view once file is uploaded:
+    + render:
+        + confirmation message  
+        + file name title
+        + button to delete file, reload upload page
+
 - Accept tabular data only & make file clickable/viewable in UI
 - Design & develop post-upload UI
-
-
 
 # TO DO LIST: 
 
