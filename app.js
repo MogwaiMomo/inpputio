@@ -46,8 +46,11 @@ passport.deserializeUser(Account.deserializeUser());
 
 // Open mongodb connection
 
-mongoose.connect('mongodb://localhost/inpputio');
-
+mongoose.connect('mongodb://localhost/inpputio', function(err, db) {
+  if(!err) {
+    console.log("Connected to the database.");
+  }
+});
 
 
 

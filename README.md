@@ -2,7 +2,12 @@
 
 Run the app (with debugging info): 
 
+$ mongod
 $ DEBUG=inpputio npm start
+
+Exit the app:
+
+CTRL-C the mongo daemon
 
 
 (For Express app setup, just 3 lines:
