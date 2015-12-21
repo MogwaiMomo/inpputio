@@ -1,20 +1,27 @@
-For Express app setup, just 3 lines:
-
-$ express myapp
-$ cd myapp
-$ npm install
+#Getting Started:
 
 Run the app (with debugging info): 
 
 $ DEBUG=inpputio npm start
 
 
+(For Express app setup, just 3 lines:
+
+$ express myapp
+$ cd myapp
+$ npm install)
+
+
 # TO DO:
+- Add a mongod start/stop to the start script
+- Figure out full CRUD cycle (CREATE, READ, UPDATE, DELETE)
+
 - Render new view once file is uploaded:
     + render:
         + confirmation message  
         + file name title
         + button to delete file, reload upload page
+- 
 
 - Accept tabular data only & make file clickable/viewable in UI
 - Design & develop post-upload UI
