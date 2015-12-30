@@ -22,6 +22,9 @@ router.get('/users/:user_id', function(req, res, next){
 router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).single('file'), function(req, res, next) {
 
     var user_id = req.params.user_id;
+    var original_name = req.file.originalname;
+    console.log("File name is: " + original_name);
+    
     var source = req.file.path;
     var desti_dir = req.params.user_id + "/uploads/";
     var desti = req.params.user_id + "/" + req.file.path;
@@ -52,6 +55,7 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
             var email_list = new Upload({
               username: user_id,
               file_path: desti,
+              file_name: original_name,
               info_type: "email_list",
               content_type: "plain/text"
             });

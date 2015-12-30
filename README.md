@@ -2,34 +2,18 @@
 
 Run the app (with debugging info): 
 
-$ mongod
+$ mongod (if not programmed to auto-run)
 $ DEBUG=inpputio npm start
-
-Exit the app:
-
-CTRL-C the mongo daemon
-
-
-(For Express app setup, just 3 lines:
-
-$ express myapp
-$ cd myapp
-$ npm install)
 
 
 # TO DO:
-1. ADD JADE SYNTAX TO SUBLIME
-2. BUG: login not recognizing known credentials
-3. BUG: not allowing file uploads
-
-
-- Figure out full CRUD cycle (CREATE, READ, UPDATE, DELETE)
 - Render new view once file is uploaded:
     + render:
         + confirmation message  
         + file name title
         + button to delete file, reload upload page
-- 
+
+- Figure out full CRUD cycle (CREATE, READ, UPDATE, DELETE)
 
 - Accept tabular data only & make file clickable/viewable in UI
 - Design & develop post-upload UI

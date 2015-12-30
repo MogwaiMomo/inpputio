@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 var Upload = new Schema({
 	username: String,
  	file_path: String,
+ 	file_name: String,
  	info_type: String,
  	content_type: String 
 });
