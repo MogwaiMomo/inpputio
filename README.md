@@ -18,9 +18,12 @@ $ npm install)
 
 
 # TO DO:
-- Add a mongod start/stop to the start script
-- Figure out full CRUD cycle (CREATE, READ, UPDATE, DELETE)
+1. ADD JADE SYNTAX TO SUBLIME
+2. BUG: login not recognizing known credentials
+3. BUG: not allowing file uploads
 
+
+- Figure out full CRUD cycle (CREATE, READ, UPDATE, DELETE)
 - Render new view once file is uploaded:
     + render:
         + confirmation message  
