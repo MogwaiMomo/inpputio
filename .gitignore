@@ -60,6 +60,9 @@ Thumbs.db
 *.css
 *.map
 
+# Ignore Documents folder
+/documents
+
 # Ignore the Node Modules folder
 /node_modules
 /phantomas
