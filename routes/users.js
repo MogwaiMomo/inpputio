@@ -23,6 +23,7 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
 
     var user_id = req.params.user_id;
     var original_name = req.file.originalname;
+    
     console.log("File name is: " + original_name);
     
     var source = req.file.path;

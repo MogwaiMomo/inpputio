@@ -11,6 +11,7 @@ block content
 			| To get started, please upload a mailing list. 
 		
 			
-		form(action="/users/#{user.username}/file_uploads" method="post")
-			input(type="file" name="file" id="file" class="inputfile")
+		form(action="/users/#{user.username}/file_uploads" method="post" enctype="multipart/form-data")
 			label(for="file") Upload your first campaign
+			input(type="file" name="file" id="file" class="inputfile")
+			input(type="submit" value="Upload Image")
