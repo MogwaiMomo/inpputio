@@ -127,7 +127,8 @@ div[role="main"] {
 
 // PAGE-SPECIFIC ELEMENTS --------------------------------
 
-.inputfile {
+.inputfile,
+.upload-submit {
   // Setting width and height to 0.1, to prevent throwing the 
   // element out of tab party in some browsers:
   
@@ -145,9 +146,8 @@ div[role="main"] {
   z-index: -1;
 }
 
-.upload-label {
-  width: 100%;
-}
+
+
 
 
 // MEDIA QUERIES -----------------------------------------

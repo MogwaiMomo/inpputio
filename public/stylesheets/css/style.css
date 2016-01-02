@@ -348,16 +348,14 @@ div[role="main"] {
 .site-entry {
   width: 100%; }
 
-.inputfile {
+.inputfile,
+.upload-submit {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
   overflow: hidden;
   position: absolute;
   z-index: -1; }
-
-.upload-label {
-  width: 100%; }
 
 .red-border {
   border: solid 1px #f00; }
