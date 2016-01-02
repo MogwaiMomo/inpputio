@@ -12,7 +12,7 @@ block content
 		
 			
 		form(action="/users/#{user.username}/file_uploads" method="post" enctype="multipart/form-data")
-			input(type="file" name="file" id="file" class="inputfile")
+			input(type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple)
 			label(for="file" class="btn btn-danger") 
 				i(class="fa fa-upload") 
 				| 	Upload your first campaign
