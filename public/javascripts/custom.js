@@ -1,8 +1,17 @@
 
 // Custom js for upload-campaign button UX: 
 
+// TO DO: 
+
+// Add event listener on label click/touch so this only runs when a file has been selected. 
+
 $(function() {
+	console.log("THIS IS WORKING")
+
 	var inputs = document.querySelectorAll( '.inputfile' );
+
+	console.log(inputs);
+
 	Array.prototype.forEach.call( inputs, function( input )
 	{
 		var label	 = input.nextElementSibling,
