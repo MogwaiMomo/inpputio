@@ -1,34 +1,37 @@
 
 // Custom js for upload-campaign button UX: 
 
-// TO DO: 
+$(document).ready(function() {
+	$('.inputfile').on("click", function() {
 
-// Add event listener on label click/touch so this only runs when a file has been selected. 
+		var inputs = document.querySelectorAll( '.inputfile' ),
 
-$(function() {
-	console.log("THIS IS WORKING")
+		Array.prototype.forEach.call( inputs, function( input ){
+			var label	 = input.nextElementSibling,
+				labelVal = label.innerHTML;
+				fileNames = [];
 
-	var inputs = document.querySelectorAll( '.inputfile' );
+			input.addEventListener( 'change', function( e ){
+				if( this.files && this.files.length > 0 ) {
 
-	console.log(inputs);
+					Array.prototype.forEach.call(this.files, function( file ){
+						var fileName = file.name;
+						fileNames.push(fileName);
+					});
 
-	Array.prototype.forEach.call( inputs, function( input )
-	{
-		var label	 = input.nextElementSibling,
-			labelVal = label.innerHTML;
+					console.log(fileNames);
 
-		input.addEventListener( 'change', function( e )
-		{
-			var fileName = '';
-			if( this.files && this.files.length > 1 )
-				fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
-			else
-				fileName = e.target.value.split( '\\' ).pop();
+					// TO DO 1: Display file names on the page
 
-			if( fileName )
-				label.querySelector( 'span' ).innerHTML = fileName;
-			else
-				label.innerHTML = labelVal;
+					// TO DO 2: Replace label with submit button
+				}
+				else { console.log("ERROR!");
+				}
+			});
 		});
 	});
 });
+
+
+
+	
