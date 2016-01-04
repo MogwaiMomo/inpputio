@@ -4,28 +4,29 @@
 $(document).ready(function() {
 	$('.inputfile').on("click", function() {
 
-		var inputs = document.querySelectorAll( '.inputfile' ),
+		var inputs = document.querySelectorAll( '.inputfile' );
 
 		Array.prototype.forEach.call( inputs, function( input ){
 			var label	 = input.nextElementSibling,
 				labelVal = label.innerHTML;
-				fileNames = [];
+				fileName = '';
 
 			input.addEventListener( 'change', function( e ){
 				if( this.files && this.files.length > 0 ) {
 
 					Array.prototype.forEach.call(this.files, function( file ){
-						var fileName = file.name;
-						fileNames.push(fileName);
+						fileName = file.name;
 					});
 
-					console.log(fileNames);
+					// Display file names on the page as text
 
-					// TO DO 1: Display file names on the page
+					label.querySelector( '.file-label-text' ).innerHTML = fileName;
+
+					$('#file-label').removeClass('btn btn-danger');
 
 					// TO DO 2: Replace label with submit button
 				}
-				else { console.log("ERROR!");
+				else { alert("File not selected. Can you try again?");
 				}
 			});
 		});
