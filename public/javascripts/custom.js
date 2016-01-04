@@ -24,7 +24,8 @@ $(document).ready(function() {
 
 					$('#file-label').removeClass('btn btn-danger');
 
-					// TO DO 2: Replace label with submit button
+					// TO DO 2: Make submit button visible
+					$('#file-submit').removeClass('upload-submit');
 				}
 				else { alert("File not selected. Can you try again?");
 				}

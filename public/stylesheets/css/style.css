@@ -364,6 +364,9 @@ div[role="main"] {
 .inputfile + label * {
   pointer-events: none; }
 
+#file-submit {
+  display: block; }
+
 .red-border {
   border: solid 1px #f00; }
 

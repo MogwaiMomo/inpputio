@@ -144,9 +144,9 @@ div[role="main"] {
   // interfere with the sibling elements:
   
   position: absolute;
-  
   z-index: -1;
 }
+
 
 .inputfile:focus + label {
   outline: 1px dotted #000;
@@ -157,6 +157,9 @@ div[role="main"] {
   pointer-events: none;
 }
 
+#file-submit {
+  display: block;
+}
 
 
 // MEDIA QUERIES -----------------------------------------
