@@ -28,6 +28,7 @@ $(document).ready(function() {
 					$('#file-submit').removeClass('upload-submit');
 				}
 				else { alert("File not selected. Can you try again?");
+				
 				}
 			});
 		});
