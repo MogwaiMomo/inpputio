@@ -367,6 +367,17 @@ div[role="main"] {
 #file-submit {
   display: block; }
 
+label:not(.btn-danger)#file-label {
+  font-family: "Avenir", sans-serif;
+  color: #666;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #fefefe;
+  border-radius: 5px;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 15px; }
+
 .red-border {
   border: solid 1px #f00; }
 

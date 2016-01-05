@@ -27,7 +27,7 @@ $(document).ready(function() {
 					// TO DO 2: Make submit button visible
 					$('#file-submit').removeClass('upload-submit');
 				}
-				else { alert("File not selected. Can you try again?");
+				else { console.log("File not selected. Can you try again?");
 				
 				}
 			});
