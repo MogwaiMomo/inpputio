@@ -24,8 +24,12 @@ $(document).ready(function() {
 
 					$('#file-label').removeClass('btn btn-danger');
 
-					// TO DO 2: Make submit button visible
-					$('#file-submit').removeClass('upload-submit');
+					// Auto-submit form once file is selected:
+					
+					$("form").submit();
+
+					// Make submit button visible
+					// $('#file-submit').removeClass('upload-submit');
 				}
 				else { console.log("File not selected. Can you try again?");
 				
