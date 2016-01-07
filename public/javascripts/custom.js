@@ -20,9 +20,8 @@ $(document).ready(function() {
 
 					// Display file names on the page as text
 
-					label.querySelector( '.file-label-text' ).innerHTML = fileName;
-
-					$('#file-label').removeClass('btn btn-danger');
+					// label.querySelector( '.file-label-text' ).innerHTML = fileName;
+					// $('#file-label').removeClass('btn btn-danger');
 
 					// Auto-submit form once file is selected:
 					
