@@ -63,10 +63,12 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
             
             // save this to the Uploads collection
 
-            email_list.save(function (err, email_list) {
+            email_list.save(function (err, email_list, user_id) {
               if (err) return console.error(err);
-              else { 
-                res.send("Upload document successfully saved to MongoDB.")
+              else {
+                console.log("Upload document successfully saved to MongoDB.");
+                console.log("Username is: " + email_list.username);
+                res.redirect('/users/' + email_list.username); 
               }
           }); 
 
