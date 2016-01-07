@@ -6,7 +6,7 @@ var router = express.Router();
 var Account = require('../models/account');
 var Upload = require('../models/upload');
 
-/* GET users listing. */
+/* GET users listing - blank slate. */
 
 
 router.get('/users/:user_id', function(req, res, next){
@@ -16,6 +16,20 @@ router.get('/users/:user_id', function(req, res, next){
 		user : req.user,
 	});
 });	
+
+/* GET users listing - 1+ files. */
+
+router.get('/users/:user_id/campaigns', function(req, res, next){
+  var user_id = req.params.user_id;
+
+  
+  res.render('account', {
+    title: "Your Uploaded Campaigns",
+    user : req.user,
+  });
+}); 
+
+
 
 // Upload mailing list file
 
@@ -68,7 +82,7 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
               else {
                 console.log("Upload document successfully saved to MongoDB.");
                 console.log("Username is: " + email_list.username);
-                res.redirect('/users/' + email_list.username); 
+                res.redirect('/users/' + email_list.username + '/campaigns'); 
               }
           }); 
 
