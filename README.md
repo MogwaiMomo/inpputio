@@ -8,7 +8,6 @@ $ DEBUG=inpputio npm start
 
 # TO DO
 
-Replace placeholder 'campaigns' with db query
 
 
 # MVP TASK FLOW: 

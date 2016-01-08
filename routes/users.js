@@ -21,12 +21,22 @@ router.get('/users/:user_id', function(req, res, next){
 
 router.get('/users/:user_id/campaigns', function(req, res, next){
   var user_id = req.params.user_id,
-  campaigns = "Placeholder_campaign_1";
-    
-  res.render('account', {
-    title: "Your Uploaded Campaigns",
-    user : user_id,
-    campaigns : campaigns,
+  campaigns = [];
+  
+  // query uploaded files for this user:
+
+  Upload.find({ username: user_id }, function(err, uploads) {
+    if (err) throw err;
+    uploads.forEach(function(upload) {
+      campaigns = upload.file_name;
+      console.log(campaigns);  
+    });
+
+    res.render('account', {
+        title: "Your Uploaded Campaigns",
+        user : user_id,
+        campaigns : campaigns,
+    });
   });
 }); 
 
