@@ -13,19 +13,20 @@ router.get('/users/:user_id', function(req, res, next){
 	var user_id = req.params.user_id;
   res.render('account', {
 		title: "Inpput Dashboard",
-		user : req.user,
+		user : user_id,
 	});
 });	
 
 /* GET users listing - 1+ files. */
 
 router.get('/users/:user_id/campaigns', function(req, res, next){
-  var user_id = req.params.user_id;
-
-  
+  var user_id = req.params.user_id,
+  campaigns = "Placeholder_campaign_1";
+    
   res.render('account', {
     title: "Your Uploaded Campaigns",
-    user : req.user,
+    user : user_id,
+    campaigns : campaigns,
   });
 }); 
 
