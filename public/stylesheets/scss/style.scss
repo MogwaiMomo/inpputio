@@ -161,13 +161,14 @@ div[role="main"] {
   display: block;
 }
 
-label:not(.btn-danger)#file-label {
+span.uploaded-file {
   @include body-font();
   background-color: #fefefe;
   border-radius: 5px;
   width: 100%;
   padding: 20px;
   margin-bottom: 15px;
+  display:block;
 }
 
 // MEDIA QUERIES -----------------------------------------
