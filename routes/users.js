@@ -6,13 +6,8 @@ var router = express.Router();
 var Account = require('../models/account');
 var Upload = require('../models/upload');
 
-/* GET users listing - blank slate. */
 
-
-router.get('/users/:user_id', function(req, res, next){
-	var user_id = req.params.user_id,
-  campaigns = [];
-  
+var check_files = function(user_id, campaigns, req, res) {
   Upload.find({ username: user_id }, function(err, uploads) {
     if (err) throw err;
     if (uploads.length > 0) {
@@ -34,6 +29,13 @@ router.get('/users/:user_id', function(req, res, next){
       });
     }      
   });
+}
+
+
+router.get('/users/:user_id', function(req, res, next){
+	var user_id = req.params.user_id,
+  campaigns = [];
+  check_files(user_id, campaigns, req, res);
 });	
 
 /* GET users listing - 1+ files. */
@@ -41,22 +43,7 @@ router.get('/users/:user_id', function(req, res, next){
 router.get('/users/:user_id/campaigns', function(req, res, next){
   var user_id = req.params.user_id,
   campaigns = [];
-  
-  // query uploaded files for this user:
-
-  Upload.find({ username: user_id }, function(err, uploads) {
-    if (err) throw err;
-    uploads.forEach(function(upload) {
-      campaigns = upload.file_name;
-      console.log(campaigns);  
-    });
-
-    res.render('account', {
-        title: "Inpput Dashboard",
-        user : user_id,
-        campaigns : campaigns,
-    });
-  });
+  check_files(user_id, campaigns, req, res);
 }); 
 
 
