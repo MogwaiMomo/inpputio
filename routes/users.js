@@ -10,11 +10,30 @@ var Upload = require('../models/upload');
 
 
 router.get('/users/:user_id', function(req, res, next){
-	var user_id = req.params.user_id;
-  res.render('account', {
-		title: "Inpput Dashboard",
-		user : user_id,
-	});
+	var user_id = req.params.user_id,
+  campaigns = [];
+  
+  Upload.find({ username: user_id }, function(err, uploads) {
+    if (err) throw err;
+    if (uploads.length > 0) {
+      uploads.forEach(function(upload) {
+        campaigns = upload.file_name;
+        console.log(campaigns);  
+      });
+
+      res.render('account', {
+          title: "Inpput Dashboard",
+          user : user_id,
+          campaigns : campaigns,
+      });
+    }
+    else {
+      res.render('account', {
+        title: "Inpput Dashboard",
+        user : user_id,
+      });
+    }      
+  });
 });	
 
 /* GET users listing - 1+ files. */
@@ -33,7 +52,7 @@ router.get('/users/:user_id/campaigns', function(req, res, next){
     });
 
     res.render('account', {
-        title: "Your Uploaded Campaigns",
+        title: "Inpput Dashboard",
         user : user_id,
         campaigns : campaigns,
     });
