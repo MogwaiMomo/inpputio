@@ -8,6 +8,7 @@ $ DEBUG=inpputio npm start
 
 # TO DO
 
+Render all uploaded campaign files, not just one
 
 
 # MVP TASK FLOW: 
