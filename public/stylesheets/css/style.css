@@ -367,7 +367,7 @@ div[role="main"] {
 #file-submit {
   display: block; }
 
-span.uploaded-file {
+.uploaded-file {
   font-family: "Avenir", sans-serif;
   color: #666;
   font-size: 1rem;
@@ -378,6 +378,14 @@ span.uploaded-file {
   padding: 20px;
   margin-bottom: 15px;
   display: block; }
+
+.file-wrapper {
+  position: relative; }
+
+.delete-x {
+  position: absolute;
+  top: 0;
+  right: 0; }
 
 .red-border {
   border: solid 1px #f00; }

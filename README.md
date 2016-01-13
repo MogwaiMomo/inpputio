@@ -8,8 +8,9 @@ $ DEBUG=inpputio npm start
 
 # TO DO
 
-1. Read pre-existing files and display.
-2. Render all uploaded campaign files, not just one.
+1. Add delete-file functionality.
+2. Render all multiple campaign files, not just one.
+
 
 
 # MVP TASK FLOW: 

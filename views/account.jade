@@ -22,9 +22,11 @@ block content
 
 		if (campaigns)
 			h3 Your feedback campaigns 
-			span(class="uploaded-file") 
-				|	#{campaigns} 
-			
+			div(class="uploaded-file") 
+				div(class="file-wrapper")
+					|	#{campaigns}
+					i(class="fa fa-times delete-x")
+
 				
 			//- form(action="/users/#{user.username}/file_uploads" method="post" enctype="multipart/form-data")
 			//- 	input(type="file" name="file" id="file" class="inputfile")
