@@ -13,7 +13,6 @@ var check_files = function(user_id, campaigns, req, res) {
     if (uploads.length > 0) {
       uploads.forEach(function(upload) {
         campaigns = upload.file_name;
-        console.log(campaigns);  
       });
 
       res.render('account', {
