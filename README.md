@@ -9,10 +9,10 @@ $ DEBUG=inpputio npm start
 # TO DO
 
 1. Add delete-file functionality:
-    a. delete document in mongodb via mongoose
-    b. delete file in file system via ... some npm package?
-    c. remove filename from page
-
+    a. remove filename from page
+    b. delete document in mongodb via mongoose (ajax)
+    c. delete file in file system via ... some npm package? (ajax) 
+    
 2. Render all multiple campaign files, not just one.
 
 

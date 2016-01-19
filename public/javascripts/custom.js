@@ -1,5 +1,5 @@
 
-// Custom js for upload-campaign button UX: 
+// Custom jquery for upload-campaign button UX: 
 
 $(document).ready(function() {
 	$('.inputfile').on("click", function() {
@@ -35,6 +35,10 @@ $(document).ready(function() {
 				}
 			});
 		});
+	});
+
+	$('.delete-x').on("click", function() {
+		$('.file-wrapper').slideUp(200);
 	});
 });
 
