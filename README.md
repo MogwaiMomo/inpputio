@@ -10,6 +10,8 @@ $ DEBUG=inpputio npm start
 
 1. Add delete-file functionality:
     a. remove filename from page
+        on click: slideUp to display:none - DONE
+        remove deleted file node from DOM - DONE
     b. delete document in mongodb via mongoose (ajax)
     c. delete file in file system via ... some npm package? (ajax) 
     

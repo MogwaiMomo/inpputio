@@ -38,7 +38,7 @@ $(document).ready(function() {
 	});
 
 	$('.delete-x').on("click", function() {
-		$('.file-wrapper').slideUp(200);
+		$('.file-wrapper').slideUp(200).remove();
 	});
 });
 
