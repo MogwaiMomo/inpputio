@@ -11,6 +11,7 @@
     "chai": "^3.0.0",
     "cookie-parser": "~1.4.0",
     "debug": "~2.2.0",
+    "delete": "^0.3.0",
     "express": "~4.13.0",
     "express-session": "^1.11.3",
     "jade": "~1.11.0",

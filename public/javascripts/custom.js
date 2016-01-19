@@ -37,6 +37,8 @@ $(document).ready(function() {
 		});
 	});
 
+	// Allow ability to delete uploaded files on click:
+	
 	$('.delete-x').on("click", function() {
 		$('.file-wrapper').slideUp(200).remove();
 	});
