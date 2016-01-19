@@ -2,6 +2,7 @@ var express = require('express');
 var multer  = require('multer');
 var fs = require('fs');
 var mkdirp = require('mkdirp');
+var del = require('delete');
 var router = express.Router();
 var Account = require('../models/account');
 var Upload = require('../models/upload');
@@ -115,6 +116,13 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
       }
     });    
   });
+
+// Delete mailing-list file
+
+router.post('/users/:user_id/delete_files', function(req, res, next) {
+  console.log("This is when we delete some shit!");
+
+});
 
 
 

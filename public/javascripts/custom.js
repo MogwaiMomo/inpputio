@@ -38,9 +38,14 @@ $(document).ready(function() {
 	});
 
 	// Allow ability to delete uploaded files on click:
-	
+
 	$('.delete-x').on("click", function() {
-		$('.file-wrapper').slideUp(200).remove();
+		$('.file-wrapper').slideUp(200);
+
+		// Send post request to delete file:
+		var ajax_result = $.post("/users/:user_id/delete_files")
+
+		// NEED TO GET USER ID FIRST, THEN CREATE THE POST URL (ABOVE).
 	});
 });
 
