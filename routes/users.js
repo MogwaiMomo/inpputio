@@ -120,7 +120,20 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
 // Delete mailing-list file
 
 router.post('/users/:user_id/delete_files', function(req, res, next) {
-  console.log("This is when we delete some shit!");
+  var filename = req.body.filename,
+      user_id = req.body.user_id;
+
+ console.log("File's name is: " + filename, "Username is: " + user_id);
+
+
+
+  // DONE Step 1: Get filename from DOM, assign to variable
+  
+  // Step 2: Query uploads collection for file name and username
+
+  // Step 3: Assign document's filepath to variable
+  // Step 4: Use delete functionality to delete file
+  // Step 5: Use delete-mongoose to delete the document in the uploads collection 
 
 });
 

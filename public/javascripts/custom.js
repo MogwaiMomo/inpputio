@@ -40,12 +40,18 @@ $(document).ready(function() {
 	// Allow ability to delete uploaded files on click:
 
 	$('.delete-x').on("click", function() {
-		var filewrapper = $('.file-wrapper');
-		filewrapper.slideUp(200);
+		var ajax_result,	
+			filename,
+			url = window.location.href;
+			user_id = url.split("/").pop();
 
+		console.log(user_id);
+
+		$('.file-wrapper').slideUp(200);
+		filename = $('.file-wrapper span').text();
 
 		// Send post request to delete file:
-		var ajax_result = $.post("/users/:user_id/delete_files");
+		ajax_result = $.post("/users/:user_id/delete_files", { 'filename': filename, 'user_id' : user_id });
 
 	});
 });
