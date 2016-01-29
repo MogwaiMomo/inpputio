@@ -42,8 +42,8 @@ $(document).ready(function() {
 	$('.delete-x').on("click", function() {
 		var ajax_result,	
 			filename,
-			url = window.location.href;
-			user_id = url.split("/").pop();
+			url = window.location.href.split("/");
+			user_id = url[4];
 
 		console.log(user_id);
 

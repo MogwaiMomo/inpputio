@@ -32,6 +32,8 @@ var check_files = function(user_id, campaigns, req, res) {
 }
 
 
+
+
 router.get('/users/:user_id', function(req, res, next){
 	var user_id = req.params.user_id,
   campaigns = [];
@@ -123,18 +125,39 @@ router.post('/users/:user_id/delete_files', function(req, res, next) {
   var filename = req.body.filename,
       user_id = req.body.user_id;
 
- console.log("File's name is: " + filename, "Username is: " + user_id);
+  // Step 2: DONE - Query uploads collection for file name and username
+
+  Upload.find({ username: user_id, file_name: filename }, function(err, uploads) {
+    if (err) throw err;
+    if (uploads.length > 0) {
+      uploads.forEach(function(upload) {
+        console.log("BEFORE: " + upload);
+        console.log(upload.file_name);
+
+        // Use delete-mongoose to delete the document in the uploads collection
 
 
+        // Step 3A: ASSIGN FILE PATH TO VARIABLE USING A CLOSURE TO AVOID DELETING ASYNCHRONOUSLY. 
 
-  // DONE Step 1: Get filename from DOM, assign to variable
-  
-  // Step 2: Query uploads collection for file name and username
 
-  // Step 3: Assign document's filepath to variable
-  // Step 4: Use delete functionality to delete file
-  // Step 5: Use delete-mongoose to delete the document in the uploads collection 
+        del(upload.file_path,function(err) {
+          if (err) throw err;
+          console.log('done!');
+        });
+      });
+    }
+  });
 
+ 
+
+  // Upload.remove({ username: user_id, file_name: filename }, function(err, uploads) {
+  //   if (err) throw err;
+  //   if (uploads.length > 0) {
+  //     uploads.forEach(function(upload) {
+  //       console.log("FILES SHOULD BE REMOVED! GO CHECK.");
+  //     });
+  //   }
+  // });
 });
 
 
