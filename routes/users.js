@@ -8,6 +8,16 @@ var Account = require('../models/account');
 var Upload = require('../models/upload');
 
 
+
+// closure: 
+
+var getUploadsQuery = function(user_id, filename) {
+  var query = Upload.find({ username: user_id, file_name: filename });
+  return query;
+}
+
+
+
 var check_files = function(user_id, campaigns, req, res) {
   Upload.find({ username: user_id }, function(err, uploads) {
     if (err) throw err;
@@ -30,6 +40,7 @@ var check_files = function(user_id, campaigns, req, res) {
     }      
   });
 }
+
 
 
 
@@ -119,47 +130,35 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
     });    
   });
 
+
+
 // Delete mailing-list file
 
 router.post('/users/:user_id/delete_files', function(req, res, next) {
   var filename = req.body.filename,
-      user_id = req.body.user_id;
-
-  // Step 2: DONE - Query uploads collection for file name and username
-
-  Upload.find({ username: user_id, file_name: filename }, function(err, uploads) {
+      user_id = req.body.user_id,
+      // get query results for uploads documents to delete
+      query = getUploadsQuery(user_id, filename);
+      
+  
+  // delete file from file system: 
+  query.exec(function(err, uploads, next) {
     if (err) throw err;
     if (uploads.length > 0) {
       uploads.forEach(function(upload) {
-        console.log("BEFORE: " + upload);
-        console.log(upload.file_name);
-
-        // Use delete-mongoose to delete the document in the uploads collection
-
-
-        // Step 3A: ASSIGN FILE PATH TO VARIABLE USING A CLOSURE TO AVOID DELETING ASYNCHRONOUSLY. 
-
-
-        del(upload.file_path,function(err) {
+        console.log("File to delete: " + upload.file_path);
+        del(upload.file_path, function(err) {
           if (err) throw err;
-          console.log('done!');
+          console.log('File deleted from file system.');  
+        });
+        upload.remove(function(err){
+          if (err) throw err;
+          console.log('Document deleted from database.')
         });
       });
     }
   });
-
- 
-
-  // Upload.remove({ username: user_id, file_name: filename }, function(err, uploads) {
-  //   if (err) throw err;
-  //   if (uploads.length > 0) {
-  //     uploads.forEach(function(upload) {
-  //       console.log("FILES SHOULD BE REMOVED! GO CHECK.");
-  //     });
-  //   }
-  // });
 });
-
 
 
 module.exports = router;
