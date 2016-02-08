@@ -17,7 +17,6 @@ var getUploadsQuery = function(user_id, filename) {
 }
 
 
-
 var check_files = function(user_id, campaigns, req, res) {
   Upload.find({ username: user_id }, function(err, uploads) {
     if (err) throw err;
@@ -41,9 +40,7 @@ var check_files = function(user_id, campaigns, req, res) {
   });
 }
 
-
-
-
+/* Render main dashboard page */
 
 router.get('/users/:user_id', function(req, res, next){
 	var user_id = req.params.user_id,
