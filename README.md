@@ -8,12 +8,8 @@ $ DEBUG=inpputio npm start
 
 # TO DO
 
-1. Add delete-file functionality:
-    a. remove filename from page
-        on click: slideUp to display:none - DONE
-        remove deleted file node from DOM - DONE
-    b. delete document in mongodb via mongoose (ajax)
-    c. delete file in file system via ... some npm package? (ajax) 
+1. Make campaigns page refresh with updated files 
+    after deleting file. 
     
 2. Render all multiple campaign files, not just one.
 
