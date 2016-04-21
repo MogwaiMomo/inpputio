@@ -8,10 +8,14 @@ $ DEBUG=inpputio npm start
 
 # TO DO
 
-1. Make campaigns page refresh with updated files 
+1. Refresh with blank slate page after deleting files. 
+
+2. Enable ability to add additional files.
+
+3. Make campaigns page refresh with updated files 
     after deleting file. 
     
-2. Render all multiple campaign files, not just one.
+4. Render all multiple campaign files, not just one.
 
 
 
