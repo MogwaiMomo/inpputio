@@ -9,7 +9,7 @@ $ DEBUG=inpputio npm start
 # TO DO
 
 1. Make campaigns page refresh with updated files 
-    after deleting file. 
+    after deleting file: NEED TO DELETE 'CAMPAIGNS' from accounts view data input for this to work. 
     
 2. Render all multiple campaign files, not just one.
 

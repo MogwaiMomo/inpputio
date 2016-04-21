@@ -147,7 +147,18 @@ router.post('/users/:user_id/delete_files', function(req, res, next) {
         console.log("File to delete: " + upload.file_path);
         del(upload.file_path, function(err) {
           if (err) throw err;
-          console.log('File deleted from file system.');  
+          console.log('File deleted from file system.'); 
+          
+          // redirect to blank (no uploads) page
+          try {
+            
+            // redirect is working but view is not
+            res.redirect('/users/momokoprice+test');
+            console.log("WHAT??")
+          }
+          catch(err) {
+            console.log("DIDN'T WORK");
+          } 
         });
         upload.remove(function(err){
           if (err) throw err;
@@ -157,6 +168,7 @@ router.post('/users/:user_id/delete_files', function(req, res, next) {
     }
   });
 });
+
 
 
 module.exports = router;
