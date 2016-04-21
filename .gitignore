@@ -63,6 +63,9 @@ Thumbs.db
 # Ignore Documents folder
 /documents
 
+# Ignore Data (Users and uploads)
+/data
+
 # Ignore the Node Modules folder
 /node_modules
 /phantomas

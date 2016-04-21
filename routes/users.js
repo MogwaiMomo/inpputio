@@ -68,8 +68,9 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
     console.log("File name is: " + original_name);
     
     var source = req.file.path;
-    var desti_dir = req.params.user_id + "/uploads/";
-    var desti = req.params.user_id + "/" + req.file.path;
+    console.log("TEST:" + source);
+    var desti_dir = "data/"+ req.params.user_id + "/uploads/";
+    var desti = "data/" + req.params.user_id + "/" + req.file.path;
 
     mkdirp(desti_dir, function(err) {
       if (err) {
