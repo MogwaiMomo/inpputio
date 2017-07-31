@@ -7,9 +7,8 @@ block content
 		if (!campaigns)
 			h3 Hi 
 				span.username #{user},
-			p 
-				| You have not launched any feedback-collection campaigns yet. 
-				| To get started, please upload a mailing list. 
+			p  
+				| To get started, please upload a plain csv (with headers) of user feedback. 
 			
 				
 			form(action="/users/#{user}/file_uploads" method="post" enctype="multipart/form-data")
@@ -17,7 +16,7 @@ block content
 				label(for="file" id="file-label" class="btn btn-danger")
 					span(class="file-label-text") 
 						i(class="fa fa-upload") 
-						| Upload your first campaign
+						| Upload your review data
 				input(type="submit" value="Upload Image" id="file-submit" class="btn btn-danger upload-submit")
 
 		if (campaigns)
