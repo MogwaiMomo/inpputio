@@ -4,10 +4,11 @@ var fs = require('fs');
 var mkdirp = require('mkdirp');
 var del = require('delete');
 var router = express.Router();
+var csv=require('csvtojson');
+
 var Account = require('../models/account');
 var Upload = require('../models/upload');
-
-
+          
 
 // closure: 
 
@@ -78,7 +79,31 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
 
       } 
       else {
+
         try {
+
+
+          // TRIAL AREA!!! STILL BROKEN, REMOVE IF YOU CAN'T FIX 
+
+          var csvFilePath = source;
+
+          csv()
+          .fromFile(csvFilePath)
+          .on('json',(jsonObj)=>{
+            // combine csv header row and csv line to a json object 
+            // jsonObj.a ==> 1 or 4 
+          })
+          .on('done',(error)=>{
+            console.log('end')
+          })
+
+
+          // END TRIAL AREA
+
+
+
+
+
           var stream_source = fs.createReadStream(source);
           var stream_desti = fs.createWriteStream(desti);
           
@@ -93,24 +118,24 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
 
             console.log("File path to save is: " + desti)
             
-            // create a new uploads object (into which we'll save the file path and info);
+            // create a new uploads document (into which we'll save the file path and info);
             
-            var email_list = new Upload({
+            var survey_csv = new Upload({
               username: user_id,
               file_path: desti,
               file_name: original_name,
-              info_type: "email_list",
+              info_type: "survey_csv",
               content_type: "plain/text"
             });
             
             // save this to the Uploads collection
 
-            email_list.save(function (err, email_list, user_id) {
+            survey_csv.save(function (err, survey_csv, user_id) {
               if (err) return console.error(err);
               else {
                 console.log("Upload document successfully saved to MongoDB.");
-                console.log("Username is: " + email_list.username);
-                res.redirect('/users/' + email_list.username + '/campaigns'); 
+                console.log("Username is: " + survey_csv.username);
+                res.redirect('/users/' + survey_csv.username + '/campaigns'); 
               }
           }); 
 
