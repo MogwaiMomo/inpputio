@@ -17,17 +17,12 @@ $ DEBUG=inpputio npm start
 
 # TO DO
 
-<<<<<<< HEAD
 1. Refresh with blank slate page after deleting files. 
 
 2. Enable ability to add additional files.
 
 3. Make campaigns page refresh with updated files 
-    after deleting file. 
-=======
-1. Make campaigns page refresh with updated files 
     after deleting file: NEED TO DELETE 'CAMPAIGNS' from accounts view data input for this to work. 
->>>>>>> refresh-blank
     
 4. Render all multiple campaign files, not just one.
 
