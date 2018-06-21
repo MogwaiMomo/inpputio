@@ -17,28 +17,8 @@ $ DEBUG=inpputio npm start
 
 # TO DO
 
-<<<<<<< HEAD
-1. Refresh with blank slate page after deleting files. 
-
-2. Enable ability to add additional files.
-
-3. Make campaigns page refresh with updated files 
-    after deleting file. 
-=======
-1. Make campaigns page refresh with updated files 
-    after deleting file: NEED TO DELETE 'CAMPAIGNS' from accounts view data input for this to work. 
->>>>>>> refresh-blank
-    
-4. Render all multiple campaign files, not just one.
+- GET HELP ON CSVTOJSON in users.js FROM GWILO
 
 
-
-# MVP TASK FLOW: 
-   - upload CSV of long-form response survey data
-   - do sentence clustering for each question (make sure each sentence is ID'ed by user)
-   - count # of unique IDs per cluster (i.e. how many individuals talk about this?)
-   - create text blurb for each cluster
-   - choose topic per cluster/blurb
-   - sentiment analysis per cluster/blurb
      
 

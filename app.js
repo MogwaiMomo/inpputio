@@ -46,7 +46,11 @@ passport.deserializeUser(Account.deserializeUser());
 
 // Open mongodb connection
 
-mongoose.connect('mongodb://localhost/inpputio', function(err, db) {
+const options = {
+  useMongoClient: true
+}
+
+mongoose.connect('mongodb://localhost/inpputio', options, function(err, db) {
   if(!err) {
     console.log("Connected to the database.");
   }

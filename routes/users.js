@@ -1,10 +1,10 @@
 var express = require('express');
 var multer  = require('multer');
 var fs = require('fs');
+var path = require('path');
 var mkdirp = require('mkdirp');
 var del = require('delete');
 var router = express.Router();
-var csv=require('csvtojson');
 
 var Account = require('../models/account');
 var Upload = require('../models/upload');
@@ -81,29 +81,6 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
       else {
 
         try {
-
-
-          // TRIAL AREA!!! STILL BROKEN, REMOVE IF YOU CAN'T FIX 
-
-          var csvFilePath = source;
-
-          csv()
-          .fromFile(csvFilePath)
-          .on('json',(jsonObj)=>{
-            // combine csv header row and csv line to a json object 
-            // jsonObj.a ==> 1 or 4 
-          })
-          .on('done',(error)=>{
-            console.log('end')
-          })
-
-
-          // END TRIAL AREA
-
-
-
-
-
           var stream_source = fs.createReadStream(source);
           var stream_desti = fs.createWriteStream(desti);
           
@@ -112,6 +89,7 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
           });
 
           // Delete files in /uploads folder after it's copied to user folder
+
           try {
             fs.unlinkSync(source);
             // save file path and metadata to account.js model
@@ -136,8 +114,34 @@ router.post('/users/:user_id/file_uploads', multer({ dest: './uploads/' }).singl
                 console.log("Upload document successfully saved to MongoDB.");
                 console.log("Username is: " + survey_csv.username);
                 res.redirect('/users/' + survey_csv.username + '/campaigns'); 
+
+
+                // TRIAL AREA!!! STILL BROKEN, REMOVE IF YOU CAN'T FIX
+                 
+                const csv=require('csvtojson');
+                var csvFilePath = desti;
+
+                var rootPath = process.cwd()
+                
+                csvFilePath = path.join(rootPath, csvFilePath)
+
+                console.log('FULL FILE PATH:', csvFilePath)
+                
+                csv()
+                .fromFile(csvFilePath)
+                .on('json',(jsonObj)=>{
+                  // combine csv header row and csv line to a json object 
+                  // jsonObj.a ==> 1 or 4 
+                  console.log(jsonObj)
+                })
+                .on('done',(error)=>{
+                  console.log('end')
+                })
+
+
+                // END TRIAL AREA
               }
-          }); 
+            }); 
 
           }
 

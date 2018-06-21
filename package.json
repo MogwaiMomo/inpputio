@@ -8,28 +8,28 @@
   },
   "dependencies": {
     "body-parser": "~1.14.2",
-    "chai": "^3.0.0",
-    "cookie-parser": "~1.4.0",
-    "csvtojson": "^1.1.7",
+    "chai": "^3.5.0",
+    "cookie-parser": "^1.4.3",
+    "csvtojson": "^1.1.12",
     "debug": "~2.2.0",
-    "delete": "^0.3.0",
-    "express": "~4.13.0",
-    "express-session": "^1.11.3",
+    "delete": "^0.3.2",
+    "express": "^4.13.4",
+    "express-session": "^1.15.6",
     "jade": "~1.11.0",
-    "mocha": "^2.2.5",
-    "mongoose": "^4.0.6",
+    "mongoose": "^4.13.14",
     "morgan": "~1.6.1",
-    "multer": "^1.0.3",
+    "multer": "^1.3.0",
+    "npm": "^6.1.0",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^3.1.0",
-    "serve-favicon": "~2.3.0",
-    "should": "^8.0.2"
+    "serve-favicon": "^2.3.2",
+    "should": "^8.4.0"
   },
   "description": "For Express app setup, just 3 lines:",
   "main": "app.js",
   "devDependencies": {
-    "mocha": "^2.2.5"
+    "mocha": "^2.5.3"
   },
   "repository": {
     "type": "git",
