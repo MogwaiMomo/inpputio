@@ -17,6 +17,8 @@ $ DEBUG=inpputio npm start
 
 # TO DO
 
+0. Fix the passport login / signup bug. Not working. 
+
 1. Refresh with blank slate page after deleting files. 
 
 2. Enable ability to add additional files.
